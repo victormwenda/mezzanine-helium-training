@@ -4,11 +4,41 @@
     xsi:schemaLocation="http://uiprogram.mezzanine.com/View">
     <view label="view_heading.system_admin_user_management" unit="SystemAdminUserMgmt" init="init">
 
+        <!-- Navigation Menu -->
         <menuitem label="menu_item.system_admin_user_management" icon="UserProfile" order="1">
             <userRole>System Admin</userRole>
         </menuitem>
         
-        <table title="table_title.system_admins" >
+        
+        <!-- Form to create new system admins -->
+        <textfield label="textfield.first_name" datatype="text" >
+            <binding variable="formSystemAdmin" >
+                <attribute name="firstName" />
+            </binding>
+        </textfield>
+        
+        <textfield label="textfield.last_name" datatype="text" >
+            <binding variable="formSystemAdmin" >
+                <attribute name="lastName" />
+            </binding>
+        </textfield>
+        
+        <textfield label="textfield.email_address" datatype="email" >
+            <binding variable="formSystemAdmin" >
+                <attribute name="emailAddress" />
+            </binding>
+        </textfield>
+        
+        <textfield label="textfield.mobile_number" datatype="tel" >
+            <binding variable="formSystemAdmin" >
+                <attribute name="mobileNumber" />
+            </binding>
+        </textfield>
+        
+        <submit label="submit.save" action="saveUser" />
+        
+        <!-- Table with user details -->
+        <table title="table_title.system_admins"  defaultSortColumn="0" defaultSortDirection="ascending" refreshIntervalSeconds="30" >
             <collectionSource variable="systemAdmins" />
             <column heading="column_heading.first_name" >
                 <attributeName>firstName</attributeName>
@@ -23,6 +53,10 @@
             <rowAction label="button.view" action="viewUser">
                 <binding variable="selectedSystemAdmin" />
             </rowAction>
+            <rowAction label="button.edit" action="editUser">
+                <binding variable="formSystemAdmin" />
+             </rowAction>
+            <filterDestination variable="filteredUsers" />
         </table>
 
     </view>

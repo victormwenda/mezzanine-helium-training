@@ -2,15 +2,47 @@ unit SystemAdminUserMgmt;
 
 SystemAdmin [] systemAdmins;
 SystemAdmin selectedSystemAdmin;
+SystemAdmin formSystemAdmin;
+SystemAdmin [] filteredUsers;
 
+bool editing; //flag to check if form is being edited
+
+
+// Create a list of all system admins
 void init(){
    systemAdmins = SystemAdmin:all();
+   formSystemAdmin = SystemAdmin:new();
 }
 
+//View a clicked user dtails on user details view
 DSL_VIEWS viewUser() {
     return DSL_VIEWS.SystemAdminUserDetails;
 }
 
+//handle click of the back button
 DSL_VIEWS back() {
     return DSL_VIEWS.SystemAdminUserMgmt;
+}
+
+
+//persist a new user 
+DSL_VIEWS saveUser() {
+    
+    formSystemAdmin.save();
+
+    //This is a new user, send notification SMS and Email
+    if (editing == false ) {
+        formSystemAdmin.invite(formSystemAdmin.mobileNumber); //send SMS invite
+        formSystemAdmin.invite(formSystemAdmin.emailAddress); //send email invite
+    }
+
+    
+    init();
+
+    return null;
+
+}
+
+void editUser() {
+ editing = true;
 }

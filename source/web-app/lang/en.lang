@@ -20,3 +20,13 @@ column_heading.name = Full name
 
 action.back = Back
 button.view = View
+button.edit = Edit
+
+textfield.first_name = First name
+textfield.last_name = Last name
+textfield.email_address = Email Address
+textfield.mobile_number = Mobile number
+
+submit.save = Save
+
+validator.required_field = Required field
