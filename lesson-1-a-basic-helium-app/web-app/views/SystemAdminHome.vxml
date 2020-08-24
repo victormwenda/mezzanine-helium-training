@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui xmlns="http://uiprogram.mezzanine.com/View" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://uiprogram.mezzanine.com/View">
+    <view label="view_heading.system_admin_home" unit="SystemAdminHome" init="init">
+
+        <menuitem label="menu_item.system_admin_home" icon="UserProfile" order="0">
+            <userRole>System Admin</userRole>
+        </menuitem>
+
+        <info label="info.welcome" value="info.system_admin_welcome" ></info>
+        
+         <info label="info.email_address">
+            <binding function="getSystemAdminEmailAddress" />
+        </info>
+        
+        <info label="info.mobile_number">
+            <binding variable="currentSystemAdminUser">
+                <attribute name="mobileNumber"/>
+            </binding>
+        </info>
+        
+    </view>
+</ui>
