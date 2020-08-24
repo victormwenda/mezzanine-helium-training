@@ -56,6 +56,10 @@
             <rowAction label="button.edit" action="editUser">
                 <binding variable="formSystemAdmin" />
              </rowAction>
+             <rowAction label="button.remove" action="removeUser">
+                <binding variable="selectedSystemAdmin" />
+                <confirm subject="confirm_subject.removing_user" body="confirm_body.removing_user" />
+            </rowAction>
             <filterDestination variable="filteredUsers" />
         </table>
 

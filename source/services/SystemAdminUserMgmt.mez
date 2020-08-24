@@ -10,7 +10,10 @@ bool editing; //flag to check if form is being edited
 
 // Create a list of all system admins
 void init(){
-   systemAdmins = SystemAdmin:all();
+
+   systemAdmins = SystemAdmin:all();//   <- Get all items
+   //systemAdmins = SystemAdmin:equals(deleted, false); //Get non deleted items
+    
    formSystemAdmin = SystemAdmin:new();
 }
 
@@ -28,6 +31,7 @@ DSL_VIEWS back() {
 //persist a new user 
 DSL_VIEWS saveUser() {
     
+    formSystemAdmin.deleted = false;
     formSystemAdmin.save();
 
     //This is a new user, send notification SMS and Email
@@ -43,6 +47,28 @@ DSL_VIEWS saveUser() {
 
 }
 
+//Edit user
 void editUser() {
  editing = true;
 }
+
+//Delete user
+DSL_VIEWS removeUser() {
+
+    if(selectedSystemAdmin == SystemAdmin:user()){
+        Mez:alert("alert.currently_logged_in");
+        return null;
+    }
+
+
+
+    //SystemAdmin:delete(selectedSystemAdmin); - Delete completely
+    selectedSystemAdmin.deleted = true; //set user deleted to true
+
+    //remove user role
+    selectedSystemAdmin.removeRole();
+
+    init();
+    return null;
+}
+

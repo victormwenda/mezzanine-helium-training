@@ -21,6 +21,7 @@ column_heading.name = Full name
 action.back = Back
 button.view = View
 button.edit = Edit
+button.remove = Remove
 
 textfield.first_name = First name
 textfield.last_name = Last name
@@ -30,3 +31,10 @@ textfield.mobile_number = Mobile number
 submit.save = Save
 
 validator.required_field = Required field
+
+
+confirm_subject.removing_user = Removing user
+confirm_body.removing_user = Do you want to delete this user?
+
+
+alert.currently_logged_in = Cannot revoke self access. You are currently logged in.

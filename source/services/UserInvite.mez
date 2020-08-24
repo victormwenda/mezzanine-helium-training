@@ -7,5 +7,6 @@ SystemAdmin inviteSystemAdmin() {
    systemAdmin.lastName = "Mwenda";
    systemAdmin.mobileNumber = "254718034449";
    systemAdmin.emailAddress = "vrwanda@safaricom.co.ke";
+   systemAdmin.deleted = false;
    return systemAdmin;
 }

@@ -6,4 +6,6 @@ persistent object SystemAdmin {
    string lastName;
    string mobileNumber;
    string emailAddress;
+
+   bool deleted;
 }
