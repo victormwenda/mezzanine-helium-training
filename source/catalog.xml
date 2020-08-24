@@ -5,6 +5,6 @@
 
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
 
-    <system systemId="http://uiprogram.mezzanine.com/View" uri="file:C:\Users\Victor Rwanda\.helium-dsl/View.xsd"/> 
+    <system systemId="http://uiprogram.mezzanine.com/View" uri="file:/home/victor/.helium-dsl/View.xsd"/> 
 
 </catalog>
