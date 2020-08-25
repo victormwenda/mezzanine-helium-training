@@ -21,14 +21,17 @@ ShopOwner[] getShopOwners() {
 }
 
 DSL_VIEWS saveUser() {
-	shopOwner.deleted = false;
-	shopOwner.save();
-	if (editing == false) {
-		shopOwner.invite(shopOwner.mobileNumber);
-	}
 	
-	init();
-	return null;
+    shopOwner.deleted = false;
+    shopOwner.save();
+	
+    if (editing == false) {
+        return null; //TODO: Remove to invite user
+       shopOwner.invite(shopOwner.mobileNumber); //Invite shop owner
+    }
+	
+    init();
+    return null;
 }
 
 DSL_VIEWS editUser() {

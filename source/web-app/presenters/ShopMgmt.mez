@@ -24,6 +24,11 @@ DSL_VIEWS saveShop() {
         return null;
     }
 
+   if(shop.owners == null) {
+        Mez:alertError("alert.shop_owner_required");
+        return null;
+    }
+
     shop.createdOn = Mez:now();
     shop.deleted = false;
     shop.save();
