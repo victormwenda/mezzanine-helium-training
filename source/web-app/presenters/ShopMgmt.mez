@@ -1,10 +1,13 @@
 unit ShopMgmt;
  
 Shop shop;
+ShopOwner ownerToAdd;
+ShopOwner ownerToRemove;
 bool editing;
  
 void init() {
     shop = Shop:new();
+    ownerToAdd = null;
     shop.shopCode = generateShopCode();
     editing = false;
 }
@@ -52,4 +55,33 @@ string generateShopCode() {
     string[] idParts = String:split(shopId, "-");
     int randomNumber = Math:random() * 100000;
     return String:concat(idParts.get(0), "-" ,randomNumber);
+}
+
+// Return all shop owners in the system
+ShopOwner[] getAllShopOwners() {
+	return ShopOwner:equals(deleted, false);
+}
+
+// Return the shop owners that are linked to the current shop
+ShopOwner[] getCurrentShopOwners() {
+	return shop.owners;
+}
+
+// Set a shop owner as an owner for the current shop
+string addShopOwner() {
+	shop.owners.append(ownerToAdd);
+	ownerToAdd = null;
+	return null;
+}
+
+// Remove a shop owner as an owner from current shop
+string removeShopOwner() {
+	ShopOwner[] shopOwners = getAllShopOwners();
+	for(int i = 0; i < shopOwners.length(); i++) {
+		ShopOwner currentShopOwner = shopOwners.get(i);
+		if(ownerToRemove._id == currentShopOwner._id) {
+			shop.owners.remove(i);
+		}
+	}
+	return null;
 }

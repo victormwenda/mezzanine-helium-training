@@ -57,3 +57,30 @@ confirm_body.removing_shop = This shop will be removed
 table_title.shops = Shops
 enum.STATES.Nairobi = Nairobi
 enum.STATES.Mombasa = Mombasa
+column_heading.state = State
+textfield.name = Name
+textfield.description = Description
+
+
+#Shop owner
+column_heading.shop_owner = Shop Owner
+select.shop_owner = Shop owner
+alert.shop_owner_required = Shop owner is required
+table_title.shop_owners = Shop Owners
+table_title.shop_owner_shops = Shop Owner Shops
+info.shop_owner_email_address = Owner e-mail address:
+info.shop_owner_mobile_number = Owner mobile number:
+info.shop_owner_firstname = Owner first name:
+info.shop_owner_lastname = Owner last name:
+view_heading.shop_owner_user_details = Shop Owner Details
+view_heading.shop_owner_user_management = Shop Owner User Management
+column_heading.shop_owner = Shop owner
+column_heading.first_name = First name
+column_heading.last_name = Last name
+menu_item.shop_owner_user_management = Shop Owners
+view_heading.shopownerdetail = Shop owner details
+column_heading.description = Description
+submit.add_shop_owner = Submit
+info.shop_code = Shop code
+column_heading.created_on = Created On
+column_heading.shop_code = Shop code
