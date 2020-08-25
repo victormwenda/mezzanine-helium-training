@@ -4,13 +4,13 @@ Farmer farmer;
 
 bool editing;
 bool showFarmerDetailInTable;
-string tableLable;
+string tableLabel;
 
 void init() {
 	farmer = Farmer:new();
 	editing = false;
 	showFarmerDetailInTable = false;
-	tableLable = "Fat table";
+	tableLabel = "Fat table";
 }
 
 
@@ -60,11 +60,11 @@ Farmer[] getFarmers() {
 string toggleShowFarmerDetailsInTable() {
 	if(showFarmerDetailInTable == false) {
 		showFarmerDetailInTable = true;
-		tableLable = "Slim table";
+		tableLabel = "Slim table";
 	}
 	else{
 		showFarmerDetailInTable = false;
-		tableLable = "Fat table";
+		tableLabel = "Fat table";
 	}
 	return null;
 }
