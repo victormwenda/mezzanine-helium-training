@@ -1,143 +1,176 @@
-menu_item.system_admin_home = System Admin Home
-menu_item.system_admin_user_management = System Admin User Management
+view_heading.system_admin_home = System Admin Home
+view_heading.system_admin_user_management = System Admin User Management
+view_heading.system_admin_user_details = System Admin User Details
+view_heading.shop_management = Shop Management
+view_heading.shop_details = Shop Details
+view_heading.shop_owner_user_details = Shop Owner Details
+view_heading.shop_owner_user_management = Shop Owner User Management
+view_heading.farmer_details = Farmer Details
+view_heading.farmer_user_management = Farmer User Management
+view_heading.user_management = User Management
+view_heading.farmer_profile = Farmer Profile
+view_heading.stock_management = Stock Management
+view_heading.entity_management = Entity Management
+view_heading.stock_levels_update = Stock Levels Update
+view_heading.farmer_details = Farmer Details
+view_heading.farmer_user_management = Farmer User Management
+view_heading.farmer_profile_crop_types = Farmer Profile Crop Types
+view_heading.farmer_profile_general = Farmer Profile General
+view_heading.farmer_profile_messaging = Farmer Profile Messaging
 
-info.welcome = Welcome
-info.system_admin_welcome = Welcome {SystemAdminHome:firstName} {SystemAdminHome:lastName}
+menu_item.system_admin_home = System Admin Home
+menu_item.system_admin_user_management = System Admin Users
+menu_item.shop_management = Shop Management
+menu_item.shop_owner_user_management = Shop Owners
+menu_item.farmer_user_management = Farmers
+menu_item.user_management = User Management
+menu_item.farmer_profile = Farmer Profile
+menu_item.stock_management = Stock Management
+menu_item.entity_management = Entity Management
+menu_item.stock_levels_update = Stock Levels Update
+menu_item.farmer_user_management = Farmers
+
 info.first_name = First name
 info.last_name = Last name
-info.mobile_number = Mobile Number:
-info.email_address = Email address:
-
-view_heading.system_admin_user_details = System Admin User Details
-view_heading.system_admin_user_management = System Admin User Management
-view_heading.system_admin_home = System Admin Home
-
-
-table_title.system_admins = System Admins
-column_heading.first_name = First name
-column_heading.last_name = Last name
-column_heading.name = Full name
-
-action.back = Back
-button.view = View
-button.edit = Edit
-button.remove = Remove
-
-textfield.first_name = First name
-textfield.last_name = Last name
-textfield.email_address = Email Address
-textfield.mobile_number = Mobile number
-
-submit.save = Save
-
-validator.required_field = Required field
-
-
-confirm_subject.removing_user = Removing user
-confirm_body.removing_user = Do you want to delete this user?
-
-
-alert.currently_logged_in = Cannot revoke self access. You are currently logged in.
-
-#Shop strings
-view_heading.shop_management = Shop Management
-view_heading.shop_details = Shop details
-menu_item.shop_management = Shop Management
-textfield.shop_name = Shop name
-textfield.shop_description = Shop description
-info.shop_name = Shop name
-info.shop_description = Shop description
-textfield.longitude = Longitude
-textfield.latitude = Latitude
-select.state = State
-column_heading.shop_name = Name
-column_heading.shop_description = Description
-confirm_subject.removing_shop = Confirm remove shop
-confirm_body.removing_shop = This shop will be removed
-table_title.shops = Shops
-enum.STATES.Nairobi = Nairobi
-enum.STATES.Mombasa = Mombasa
-column_heading.state = State
-textfield.name = Name
-textfield.description = Description
-
-
-#Shop owner
-column_heading.shop_owner = Shop Owner
-select.shop_owner = Shop owner
-alert.shop_owner_required = Shop owner is required
-table_title.shop_owners = Shop Owners
-table_title.shop_owner_shops = Shop Owner Shops
+info.email_address = E-mail address:
+info.mobile_number = Mobile number:
+info.welcome = Welcome:
+info.system_admin_welcome = Welcome {SystemAdminHome:firstName} {SystemAdminHome:lastName}
+info.shop_code = Shop code:
+info.shop_name = Shop name:
+info.shop_description = Shop description:
+info.longitude = Longitude:
+info.latitude = Latitude:
+info.state = Sate:
+info.created_on = Created on:
+info.updated_on = Last updated on:
 info.shop_owner_email_address = Owner e-mail address:
 info.shop_owner_mobile_number = Owner mobile number:
 info.shop_owner_firstname = Owner first name:
 info.shop_owner_lastname = Owner last name:
-view_heading.shop_owner_user_details = Shop Owner Details
-view_heading.shop_owner_user_management = Shop Owner User Management
+info.shop = Shop:
+info.registered_on = Registered on:
+info.farm_size = Farm size:
+info.farm_address = Farm address:
+info.name = Name:
+info.stock_type = Stock type:
+info.registered_on = Registered on:
+info.farm_size = Farm size:
+info.farm_address = Farm address:
+info.last_updated = Last updated:
+info.shop_notification_info = Shops for which to receive stock level notifications:
+
+table_title.system_admins = System Administrators
+table_title.shops = Shops
+table_title.shop_owners = Shop Owners
+table_title.shop_owner_shops = Shop Owner Shops
+table_title.farmers = Farmers
+table_title.farmer_crop_types = Farmer Crop Types
+table_title.stock_items = Stock Items
+table_title.farmers = Farmers
+
+column_heading.name = Name
+column_heading.mobile_number = Mobile number
+column_heading.email_address = E-mail address
+column_heading.shop_code = Shop code
+column_heading.name = Name
+column_heading.description = Description
+column_heading.state = State
+column_heading.created_on = Created on
 column_heading.shop_owner = Shop owner
 column_heading.first_name = First name
 column_heading.last_name = Last name
-menu_item.shop_owner_user_management = Shop Owners
-view_heading.shopownerdetail = Shop owner details
-column_heading.description = Description
-submit.add_shop_owner = Submit
-info.shop_code = Shop code
-column_heading.created_on = Created On
-column_heading.shop_code = Shop code
-
-
-#Farmer
-button.fat_table_slim_table = Fat table slim
-datefield.last_shop_visit = Shop last Visit
-info.updated_on = Updated On
-info.farm_size = Farm size
-info.farm_address = Farm address
-info.longitude = Longitude
-info.latitude = Latitude
-info.registered_on = Registered on
-info.state = County
-
+column_heading.farm_address = Farm address
+column_heading.farm_size = Farm size
 column_heading.longitude = Longitude
 column_heading.latitude = Latitude
-column_heading.farm_size = Farm size
-column_heading.farm_address = Farm address
-column_heading.email_address = Email address
-column_heading.mobile_number = Mobile Number
-column_heading.registered_on = Registered On
-
-
-menu_item.farmer_user_management = Farmer Management
-
-table_title.farmers = Farmers
-
-textarea.farm_address = Farm address
-textfield.farm_size = Farm size
-
-view_heading.farmer_details = Farmer details
-view_heading.farmer_user_management = User Management
-
-#Menus
-column_heading.entity_type = Entity type
-menu_item.stock_management = Stock Management
-menu_item.entity_management = Entity Management
-view_heading.entity_management = Entity Management
-column_heading.entity_count = Count
-button.select = Select
-table_title.stock_items = Stock Items
-info.stock_type = Stock type
-view_heading.stock_management = Stock Management
-table_title.stock_items = Stock items
+column_heading.state = State
+column_heading.registered_on = Registered on
+column_heading.user_type = User type
+column_heading.user_count = User count
 column_heading.stock_type = Stock type
-confirm_subject.removing_stock = Confirm remove stock
-confirm_body.removing_stock = Yes Remove stock
-info.name = Name
+column_heading.entity_type = Entity type
+column_heading.entity_count = Entity count
+column_heading.farm_address = Farm address
+column_heading.farm_size = Farm size
+column_heading.longitude = Longitude
+column_heading.latitude = Latitude
+column_heading.state = State
+column_heading.registered_on = Registered on
+column_heading.profile_category = Profile category
+column_heading.last_updated_on = Last updated 
 
+button.view = View
+button.edit = Edit
+button.remove = Remove
+button.toggle_show_farmer_details_in_table = Toggle table detail
+button.fat_table_slim_table = {FarmerUserMgmt:tableLable}
+button.select = Select
+button.toggle_crop_types_visibility = {FarmerProfile:cropTypeTableLable}
+button.remove_all_farmer_crop_types = Remove all farmer crop types
+button.toggle_show_farmer_details_in_table = Toggle table detail
+button.fat_table_slim_table = {FarmerUserMgmt:tableLable}
+button.remove_all_messaging_shops = Remove all messaging shops
 
-#Stock
-select.date_of_stocktake = Stock take Date
+action.back = Back
+
+textfield.first_name = First name
+textfield.last_name = Last name
+textfield.email_address = E-mail address:
+textfield.mobile_number = Mobile number:
+textfield.name = Name:
+textfield.description = Description:
+textfield.longitude = Longitude:
+textfield.latitude = Latitude:
+textfield.farm_size = Farm size:
+
+datefield.last_shop_visit = Last shop visit:
+
+textarea.farm_address = Farm address:
+
+checkbox.opt_in_sms_messaging = Opt in for messaging by SMS:
+checkbox.opt_in_email_messaging = Opt in for messaging by E-mail:
+
+submit.save = Save
+submit.add_shop_owner = Add shop owner
+submit.add_crop_type = Add crop type
+submit.submit_messaging_preferences = Submit messaging preferences
+submit.add_messaging_shop = Add messaging shop
+
+select.state = State:
+select.shop_owner = Shop owner:
+select.crop_types = Select:
+select.date_of_stocktake = Date of Stocktake
 select.shop = Shop
+
+validator.required_field = Required field
+
+alert.currently_logged_in = You selected yourself for removal. You cannot revoke your own access.
+alert.shop_owner_required = Please specify the shop owner before proceeding.
+alert.uploaded_data_saved = The uploaded data has been saved.
+
+confirm_subject.removing_user = Removing user
+confirm_body.removing_user = The selected user's access will be revoked. Continue?
+confirm_subject.removing_shop = Delete shop
+confirm_body.removing_shop = The selected shop will be deleted. Continue?
+confirm_subject.removing_stock = Delete stock item
+confirm_body.removing_stock = The selected stock item will be deleted. Continue?
+
 fileupload.stock_update_CSV = Stock Update CSV
-alert.uploaded_data_saved = Uploaded data saved
-view_heading.stock_levels_update
-menu_item.stock_levels_update  = Stock levels update
-view_heading.stock_levels_update = Stock levels update
+
+enum.STATES.West_Coast = West Coast
+enum.STATES.South_Coast = South Coast
+enum.STATES.Inland = Inland
+enum.STOCK_TYPE.fertilizer = Fertilizer
+enum.STOCK_TYPE.crop_seed = Crop Seed
+enum.STATES.Inland = Inland
+menu_item.farmer_profile_general = General
+menu_item.farmer_profile_messaging = Messaging
+menu_item.farmer_profile_crop_type = Crop Types
+
+messaging.sms.message_content = {messageContent}
+messaging.email.stock_level_description = Stock level notification
+messaging.email.stock_level_subject = Stock level
+messaging.email.stock_level_body = {messageContent}
+
+empty=

@@ -1,3 +1,3 @@
 object FileUpload {
- blob data;
+	blob data;
 }

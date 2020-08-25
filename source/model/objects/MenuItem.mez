@@ -1,5 +1,5 @@
 object MenuItem {
-    string label;
-    string description;
-    DSL_VIEWS navigationDestination;
+	string label;
+	string description;
+	DSL_VIEWS navigationDestination;
 }

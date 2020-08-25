@@ -38,3 +38,4 @@ Stock getStockFromName(string name) {
 	}
 	return null;
 }
+

@@ -16,22 +16,23 @@ DSL_VIEWS back() {
 	return DSL_VIEWS.ShopOwnerUserMgmt;
 }
 
+DSL_VIEWS backToUserMgmtMenu() {
+	return DSL_VIEWS.UserMgmtMenu;
+}
+
 ShopOwner[] getShopOwners() {
 	return ShopOwner:equals(deleted, false);
 }
 
 DSL_VIEWS saveUser() {
+	shopOwner.deleted = false;
+	shopOwner.save();
+	if (editing == false) {
+		shopOwner.invite(shopOwner.mobileNumber);
+	}
 	
-    shopOwner.deleted = false;
-    shopOwner.save();
-	
-    if (editing == false) {
-        return null; //TODO: Remove to invite user
-       shopOwner.invite(shopOwner.mobileNumber); //Invite shop owner
-    }
-	
-    init();
-    return null;
+	init();
+	return null;
 }
 
 DSL_VIEWS editUser() {

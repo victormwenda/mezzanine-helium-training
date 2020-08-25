@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui xmlns="http://uiprogram.mezzanine.com/View" 
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://uiprogram.mezzanine.com/View View.xsd">
+	xsi:schemaLocation="http://uiprogram.mezzanine.com/View ../View.xsd">
 	<view label="view_heading.farmer_details" unit="FarmerUserMgmt">
+	
+		<action label="action.back" action="back"/>
 
-		<action label="action.back" action="back" />
-		
 		<info label="info.registered_on">
 			<binding variable="farmer">
 				<attribute name="registeredOn"/>
@@ -71,5 +71,13 @@
 				<attribute name="state"/>
 			</binding>
 		</info>
+		
+		<!-- table to represent the farmer crop types -->
+		<table title="table_title.farmer_crop_types">
+			<collectionSource function="getFarmerCropTypes"/>
+			<column heading="column_heading.name">
+				<attributeName>name</attributeName>
+			</column>
+		</table>
 	</view>
 </ui>

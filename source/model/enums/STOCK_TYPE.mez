@@ -1,4 +1,0 @@
-enum STOCK_TYPE {
-    fertilizer,
-    crop_seed
-}
