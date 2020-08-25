@@ -1,0 +1,24 @@
+persistent object Shop {
+
+    //unique shop identifier
+    string shopCode;
+
+    @requiredFieldValidator("validator.required_field")
+    string name;
+
+    @requiredFieldValidator("validator.required_field")
+    string description;
+
+    bool deleted;
+    datetime createdOn;
+    datetime updatedOn;
+
+    @requiredFieldValidator("validator.required_field")
+    decimal longitude;
+    
+    @requiredFieldValidator("validator.required_field")
+    decimal latitude;
+
+    @requiredFieldValidator("validator.required_field")
+    STATES state;
+}

@@ -1,0 +1,55 @@
+unit ShopMgmt;
+ 
+Shop shop;
+bool editing;
+ 
+void init() {
+    shop = Shop:new();
+    shop.shopCode = generateShopCode();
+    editing = false;
+}
+ 
+Shop[] getShops() {
+    return Shop:equals(deleted, false);
+}
+ 
+DSL_VIEWS saveShop() {
+
+    if (editing == true) {
+        shop.updatedOn = Mez:now();
+        init();
+        return null;
+    }
+
+    shop.createdOn = Mez:now();
+    shop.deleted = false;
+    shop.save();
+    init();
+    return null;
+}
+ 
+DSL_VIEWS viewShop() {
+    return DSL_VIEWS.ShopDetailsView;
+}
+ 
+DSL_VIEWS back() {
+    return DSL_VIEWS.ShopMgmtView;
+}
+ 
+DSL_VIEWS editShop() {
+    editing = true;
+    return null;
+}
+DSL_VIEWS deleteShop() {
+    shop.deleted = true;
+    init();
+    return null;
+}
+
+//Generates the ID of a shop
+string generateShopCode() {
+    string shopId = shop._id;
+    string[] idParts = String:split(shopId, "-");
+    int randomNumber = Math:random() * 100000;
+    return String:concat(idParts.get(0), "-" ,randomNumber);
+}

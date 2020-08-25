@@ -5,7 +5,7 @@
     <view label="view_heading.system_admin_user_management" unit="SystemAdminUserMgmt" init="init">
 
         <!-- Navigation Menu -->
-        <menuitem label="menu_item.system_admin_user_management" icon="UserProfile" order="1">
+        <menuitem label="menu_item.system_admin_user_management" icon="people" order="1">
             <userRole>System Admin</userRole>
         </menuitem>
         
