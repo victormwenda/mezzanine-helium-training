@@ -1,31 +1,15 @@
 unit FarmerProfile;
 
 Farmer farmer;
-bool showFarmerCropTypes;
-string cropTypeTableLable;
 Stock cropType;
+Shop messagingShop;
 
 void init() {
 	farmer = Farmer:user();
-	showFarmerCropTypes = true;
-	cropTypeTableLable = "Hide crop types";
 }
 
 Stock[] getFarmerCropTypes() {
 	return farmer.cropTypes;
-}
-
-// View or hide farmer crop type details
-string toggleFarmerCropTypesVisibility() {
-	if(showFarmerCropTypes == false) {
-		showFarmerCropTypes = true;
-		cropTypeTableLable = "Hide crop types";
-	}
-	else{
-		showFarmerCropTypes = false;
-		cropTypeTableLable = "Show crop types";
-	}
-	return null;
 }
 
 // Return the stock items that represent crop types, and that have not already been linked to the farmer
@@ -44,6 +28,7 @@ Stock[] getEligibleCropTypes() {
 // Link the selected crop types to the farmer
 string addCropType() {
 	farmer.cropTypes.append(cropType);
+	farmer.cropTypeProfileUpdatedOn = Mez:now();
 	return null;
 }
 
@@ -56,6 +41,7 @@ string removeFarmerCropType() {
 		// Compare item using internal ids to ensure equivalence
 		if(currentFarmerCropType._id == cropType._id) {
 			farmerCropTypes.remove(i);
+			farmer.cropTypeProfileUpdatedOn = Mez:now();
 		}
 	}
 	cropType = null;
@@ -68,6 +54,67 @@ string removeAllFarmerCropTypes() {
 	// Loop backwards to avoid skipping over items as the list is reduced
 	for(int i = farmerCropTypes.length() - 1; i >= 0; i--) {
 		farmerCropTypes.remove(i);
+		farmer.cropTypeProfileUpdatedOn = Mez:now();
+	}
+	return null;
+}
+
+
+DSL_VIEWS backToMenu() {
+	return DSL_VIEWS.FarmerProfileMenu;
+}
+
+
+DSL_VIEWS submitMessagingPreferences() {
+	farmer.messagingProfileUpdatedOn = Mez:now();
+	return DSL_VIEWS.FarmerProfileMessaging;
+}
+
+bool messagingOptedIn() {
+	if(farmer.smsMessaging || farmer.emailMessaging) {
+		return true;
+	}
+	return false;
+}
+
+Shop[] getEligibleShopsForMessaging() {
+	return Shop:diff(
+		equals(deleted, false),
+		relationshipIn(notifiedFarmers, farmer)
+	);
+}
+
+Shop[] getFarmerShopsForMessaging() {
+	return farmer.messagingShops;
+}
+
+string addMessagingShop() {
+	farmer.messagingShops.append(messagingShop);
+	farmer.messagingProfileUpdatedOn = Mez:now();
+	return null;
+}
+
+string removeMessagingShop() {
+	Shop[] farmerMessagingShops = farmer.messagingShops;
+	// Loop using a for loop with a counter over the farmer messaging shops collection
+	for(int i = 0; i < farmerMessagingShops.length(); i++) {
+		Shop currentMessagingShop = farmerMessagingShops.get(i);
+		// Compare item using internal ids to ensure equivalence
+		if(currentMessagingShop._id == messagingShop._id) {
+			farmerMessagingShops.remove(i);
+			farmer.messagingProfileUpdatedOn = Mez:now();
+		}
+	}
+	messagingShop = null;
+	return null;
+}
+
+string removeAllMessagingShops() {
+	Shop[] farmerMessagingShops = farmer.messagingShops;
+	// Loop backwards to avoid skipping over items as the list is reduced
+	for(int i = farmerMessagingShops.length() - 1; i >= 0; i--) {
+		farmerMessagingShops.remove(i);
+		farmer.messagingProfileUpdatedOn = Mez:now();
 	}
 	return null;
 }

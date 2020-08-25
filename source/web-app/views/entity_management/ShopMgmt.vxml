@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://uiprogram.mezzanine.com/View ../View.xsd">
 	<view label="view_heading.shop_management" unit="ShopMgmt" init="init">
-		
+
 		<action label="action.back" action="backToEntityMgmtMenu"/>
 		
 		<!-- fields for basic shop details -->

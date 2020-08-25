@@ -30,7 +30,7 @@ string generateShopCode() {
 	// To generate get a 5 digit integer from this we multiply the value and then we make use of Helium's implicit casting to cast the value to an integer
 	int randomNumber = Math:random() * 100000;
 
-	// Final part is to concatenate the different string parts using the concat built in function
+	// Final part is to concatenate the different parts using the concat built in function
 	return String:concat(idParts.get(0), "-" ,randomNumber);
 }
 

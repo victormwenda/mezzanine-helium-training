@@ -30,15 +30,25 @@ persistent object Farmer {
 	@requiredFieldValidator("validator.required_field")
 	STATES state;
 	
-	// When last dit this farmer visit any shop 
+	// When last did this farmer visit any shop 
 	datetime lastShopVisit;
+	
+	// Attributes for messaging opt-in
+	bool smsMessaging;
+	bool emailMessaging;
 	
 	// Meta information
 	datetime registeredOn;
 	datetime updatedOn;
+	datetime cropTypeProfileUpdatedOn;
+	datetime messagingProfileUpdatedOn;
 	bool deleted;
 	
 	// Relationship between farmer and crop types
 	@ManyToMany
 	Stock cropTypes via farmers;
+	
+	// Relationship between farmer and shops for which the farmer would like to receive stock level notifications
+	@ManyToMany
+	Shop messagingShops via notifiedFarmers;
 }
