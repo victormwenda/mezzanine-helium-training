@@ -87,11 +87,8 @@ column_heading.shop_code = Shop code
 
 
 #Farmer
-
 button.fat_table_slim_table = Fat table slim
-
 datefield.last_shop_visit = Shop last Visit
-
 info.updated_on = Updated On
 info.farm_size = Farm size
 info.farm_address = Farm address
@@ -119,3 +116,28 @@ textfield.farm_size = Farm size
 view_heading.farmer_details = Farmer details
 view_heading.farmer_user_management = User Management
 
+#Menus
+column_heading.entity_type = Entity type
+menu_item.stock_management = Stock Management
+menu_item.entity_management = Entity Management
+view_heading.entity_management = Entity Management
+column_heading.entity_count = Count
+button.select = Select
+table_title.stock_items = Stock Items
+info.stock_type = Stock type
+view_heading.stock_management = Stock Management
+table_title.stock_items = Stock items
+column_heading.stock_type = Stock type
+confirm_subject.removing_stock = Confirm remove stock
+confirm_body.removing_stock = Yes Remove stock
+info.name = Name
+
+
+#Stock
+select.date_of_stocktake = Stock take Date
+select.shop = Shop
+fileupload.stock_update_CSV = Stock Update CSV
+alert.uploaded_data_saved = Uploaded data saved
+view_heading.stock_levels_update
+menu_item.stock_levels_update  = Stock levels update
+view_heading.stock_levels_update = Stock levels update

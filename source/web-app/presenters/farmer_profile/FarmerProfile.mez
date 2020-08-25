@@ -1,0 +1,73 @@
+unit FarmerProfile;
+
+Farmer farmer;
+bool showFarmerCropTypes;
+string cropTypeTableLable;
+Stock cropType;
+
+void init() {
+	farmer = Farmer:user();
+	showFarmerCropTypes = true;
+	cropTypeTableLable = "Hide crop types";
+}
+
+Stock[] getFarmerCropTypes() {
+	return farmer.cropTypes;
+}
+
+// View or hide farmer crop type details
+string toggleFarmerCropTypesVisibility() {
+	if(showFarmerCropTypes == false) {
+		showFarmerCropTypes = true;
+		cropTypeTableLable = "Hide crop types";
+	}
+	else{
+		showFarmerCropTypes = false;
+		cropTypeTableLable = "Show crop types";
+	}
+	return null;
+}
+
+// Return the stock items that represent crop types, and that have not already been linked to the farmer
+Stock[] getEligibleCropTypes() {
+	
+	// Diff takes two selectors as arguments and returns items that are returned by the first, but not the second selector
+	return Stock:diff(
+		// Basic equals to only consider stock types that represent crop and not fertilizer
+		equals(stockType, STOCK_TYPE.crop_seed), 
+		
+		// Use relationshipIn for all stocks that are linked to the selected farmer so that it can be excluded from the results
+		relationshipIn(farmers, farmer)
+	);
+}
+
+// Link the selected crop types to the farmer
+string addCropType() {
+	farmer.cropTypes.append(cropType);
+	return null;
+}
+
+// Unlink the selected crop types from the farmer
+string removeFarmerCropType() {
+	Stock[] farmerCropTypes = farmer.cropTypes;
+	// Loop using a for loop with a counter over the farmer crop types collection
+	for(int i = 0; i < farmerCropTypes.length(); i++) {
+		Stock currentFarmerCropType = farmerCropTypes.get(i);
+		// Compare item using internal ids to ensure equivalence
+		if(currentFarmerCropType._id == cropType._id) {
+			farmerCropTypes.remove(i);
+		}
+	}
+	cropType = null;
+	return null;
+}
+
+// Unlink all crop types from the farmer
+string removeAllFarmerCropTypes() {
+	Stock[] farmerCropTypes = farmer.cropTypes;
+	// Loop backwards to avoid skipping over items as the list is reduced
+	for(int i = farmerCropTypes.length() - 1; i >= 0; i--) {
+		farmerCropTypes.remove(i);
+	}
+	return null;
+}
