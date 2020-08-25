@@ -84,3 +84,38 @@ submit.add_shop_owner = Submit
 info.shop_code = Shop code
 column_heading.created_on = Created On
 column_heading.shop_code = Shop code
+
+
+#Farmer
+
+button.fat_table_slim_table = Fat table slim
+
+datefield.last_shop_visit = Shop last Visit
+
+info.updated_on = Updated On
+info.farm_size = Farm size
+info.farm_address = Farm address
+info.longitude = Longitude
+info.latitude = Latitude
+info.registered_on = Registered on
+info.state = County
+
+column_heading.longitude = Longitude
+column_heading.latitude = Latitude
+column_heading.farm_size = Farm size
+column_heading.farm_address = Farm address
+column_heading.email_address = Email address
+column_heading.mobile_number = Mobile Number
+column_heading.registered_on = Registered On
+
+
+menu_item.farmer_user_management = Farmer Management
+
+table_title.farmers = Farmers
+
+textarea.farm_address = Farm address
+textfield.farm_size = Farm size
+
+view_heading.farmer_details = Farmer details
+view_heading.farmer_user_management = User Management
+
