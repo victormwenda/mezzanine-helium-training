@@ -7,6 +7,7 @@ int purchaseQuantity;
 decimal goodsCost;
 decimal governmentAssistanceDiscount;
 int finalCost;
+FarmerPurchase farmerPurchase;
 
 void init() {
 	farmer = Farmer:user();
@@ -138,8 +139,9 @@ bool governmentAssitanceApplicableAndSummary() {
 string makePurchase() {
 	
 	// Record the purchase
-	FarmerPurchase farmerPurchase = FarmerPurchase:new();
-	farmerPurchase.purchasedOn = Mez:now();
+	farmerPurchase = FarmerPurchase:new();
+	date purchasedon = Mez:now();
+	farmerPurchase.purchasedOn = purchasedon;
 	farmerPurchase.quantity = purchaseQuantity;
 	farmerPurchase.unitPrice = selectedStock.price;
 	farmerPurchase.goodsCost = goodsCost;
@@ -147,10 +149,11 @@ string makePurchase() {
 	farmerPurchase.finalCost = finalCost;
 	farmerPurchase.farmer = farmer;
 	farmerPurchase.stock = selectedStock.stock;
+	farmerPurchase.shop = shop;
 	farmerPurchase.save();
 	
 	// Make payment
-	farmerPurchase.paymentId = farmer.pay(shop, "KES", finalCost);
+	//farmerPurchase.paymentId = farmer.pay(shop, "KES", finalCost);
 	
 	// Make payment with an additional reference
 	/*farmerPurchase.paymentId = farmer.payWithRef(
@@ -160,7 +163,26 @@ string makePurchase() {
 	
 	Mez:alert("alert.purchase_successfull");
 	init();
+
+	// local variable that will be used as parameter in the Jasper report attached to the e-mail
+	uuid farmerPurchaseId = farmerPurchase._id;
+	
+	string subject = getFarmerPurchaseInvoiceFileName();
+	
+	Mez:emailAttach(
+		farmer.emailAddress, 
+		"messaging.email.farmer_purchase_invoice_description", 
+		"messaging.email.farmer_purchase_invoice_subject", 
+		"messaging.email.farmer_purchase_invoice_body",
+		{"farmer_purchase_invoice_report/FarmerPurchaseInvoice.jrxml", getFarmerPurchaseInvoiceFileName()},
+		EMAIL_TEMPLATES.email_template
+	);
+	
 	return null;
+}
+
+string getFarmerPurchaseInvoiceFileName() {
+	return Strings:concat("Invoice for ", farmer.firstName, " ", farmer.lastName, " ", farmerPurchase.purchasedOn);
 }
 
 FarmerPurchase[] getFarmerUserPurchases() {

@@ -220,5 +220,7 @@ messaging.sms.message_content = {messageContent}
 messaging.email.stock_level_description = Stock level notification
 messaging.email.stock_level_subject = Stock level
 messaging.email.stock_level_body = {messageContent}
+messaging.email.farmer_purchase_invoice_body = Please see the attached invoice for your attention.
+messaging.email.farmer_purchase_invoice_subject = {subject}
 
 empty=
