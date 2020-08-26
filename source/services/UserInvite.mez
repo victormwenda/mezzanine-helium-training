@@ -15,6 +15,7 @@ SystemAdmin inviteSystemAdmin() {
 	systemAdmin.mobileNumber = "278212345678";
 	systemAdmin.emailAddress = "user@domain.com";
 	systemAdmin.deleted = false;
+	systemAdmin.roleName = EN_SYSTEM_ADMIN_ROLE_NAME.System_Admin;
 	
 	// Generate test data for crops
 	TestData:generateStockItems();

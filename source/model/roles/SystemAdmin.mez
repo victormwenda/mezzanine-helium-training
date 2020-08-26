@@ -19,6 +19,8 @@ persistent object SystemAdmin {
 	string mobileNumber;
 
 	string emailAddress;
+	
+	EN_SYSTEM_ADMIN_ROLE_NAME roleName;
 
 	bool deleted;
 }

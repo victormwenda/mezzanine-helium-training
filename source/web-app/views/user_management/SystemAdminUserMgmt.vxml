@@ -34,6 +34,13 @@
 			</binding>
 		</textfield>
 
+		<select label="select.custom_role_name"> 
+			<binding variable="formSystemAdmin">
+				<attribute name="roleName"/>
+			</binding>
+			<enum>EN_SYSTEM_ADMIN_ROLE_NAME</enum>
+		</select>
+
 		<submit label="submit.save" action="saveUser"/>
 
 		<!-- Place multiple attributeName tags under a single column tag to have helium concatenate the values, separated by spaces -->

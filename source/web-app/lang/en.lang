@@ -265,6 +265,7 @@ select.crop_types = Select:
 select.date_of_stocktake = Date of Stocktake:
 select.shop = Shop:
 select.stock = Stock
+select.custom_role_name = Custom Role Name
 
 validator.required_field = Required field
 
