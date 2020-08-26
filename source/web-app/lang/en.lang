@@ -17,6 +17,7 @@ view_heading.farmer_user_management = Farmer User Management
 view_heading.farmer_profile_crop_types = Farmer Profile Crop Types
 view_heading.farmer_profile_general = Farmer Profile General
 view_heading.farmer_profile_messaging = Farmer Profile Messaging
+view_heading.farmer_profile_documentation = Farmer Profile Documentation
 
 menu_item.system_admin_home = System Admin Home
 menu_item.system_admin_user_management = System Admin Users
@@ -29,6 +30,10 @@ menu_item.stock_management = Stock Management
 menu_item.entity_management = Entity Management
 menu_item.stock_levels_update = Stock Levels Update
 menu_item.farmer_user_management = Farmers
+menu_item.farmer_profile_general = General
+menu_item.farmer_profile_messaging = Messaging
+menu_item.farmer_profile_crop_type = Crop Types
+menu_item.farmer_profile_documentation = Documentation
 
 info.first_name = First name
 info.last_name = Last name
@@ -59,6 +64,7 @@ info.farm_size = Farm size:
 info.farm_address = Farm address:
 info.last_updated = Last updated:
 info.shop_notification_info = Shops for which to receive stock level notifications:
+info.government_assistance_recipient_certificate_id = Government Assistance Recipient Certificate ID:
 
 table_title.system_admins = System Administrators
 table_title.shops = Shops
@@ -111,6 +117,7 @@ button.remove_all_farmer_crop_types = Remove all farmer crop types
 button.toggle_show_farmer_details_in_table = Toggle table detail
 button.fat_table_slim_table = {FarmerUserMgmt:tableLable}
 button.remove_all_messaging_shops = Remove all messaging shops
+button.deleted_government_assistance_recipient_certificate = Deleted government assistance recipient certificate
 
 action.back = Back
 
@@ -123,6 +130,7 @@ textfield.description = Description:
 textfield.longitude = Longitude:
 textfield.latitude = Latitude:
 textfield.farm_size = Farm size:
+textfield.government_assistance_recipient_certificate_id = Government Assistance Recipient Certificate ID:
 
 datefield.last_shop_visit = Last shop visit:
 
@@ -148,6 +156,9 @@ validator.required_field = Required field
 alert.currently_logged_in = You selected yourself for removal. You cannot revoke your own access.
 alert.shop_owner_required = Please specify the shop owner before proceeding.
 alert.uploaded_data_saved = The uploaded data has been saved.
+alert.null_government_assistance_certificate = No file specified. Please specify file before saving.
+alert.null_government_assistance_certificate_id = No certificate ID specified. Please specify the certificate ID before saving. 
+alert.invalid_government_assistance_certificate_id = Invalid certificate ID specified.
 
 confirm_subject.removing_user = Removing user
 confirm_body.removing_user = The selected user's access will be revoked. Continue?
@@ -157,6 +168,7 @@ confirm_subject.removing_stock = Delete stock item
 confirm_body.removing_stock = The selected stock item will be deleted. Continue?
 
 fileupload.stock_update_CSV = Stock Update CSV
+fileupload.government_assistance_recipient_certificate = Government Assistance Recipient Certificate:
 
 enum.STATES.West_Coast = West Coast
 enum.STATES.South_Coast = South Coast
@@ -164,9 +176,6 @@ enum.STATES.Inland = Inland
 enum.STOCK_TYPE.fertilizer = Fertilizer
 enum.STOCK_TYPE.crop_seed = Crop Seed
 enum.STATES.Inland = Inland
-menu_item.farmer_profile_general = General
-menu_item.farmer_profile_messaging = Messaging
-menu_item.farmer_profile_crop_type = Crop Types
 
 messaging.sms.message_content = {messageContent}
 messaging.email.stock_level_description = Stock level notification

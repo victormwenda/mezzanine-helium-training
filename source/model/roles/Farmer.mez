@@ -37,11 +37,16 @@ persistent object Farmer {
 	bool smsMessaging;
 	bool emailMessaging;
 	
+	// Farmer profile documentation related
+	uuid governmentAssistanceCertificateId;
+	blob governmentAssistanceCertificate;
+	
 	// Meta information
 	datetime registeredOn;
 	datetime updatedOn;
 	datetime cropTypeProfileUpdatedOn;
 	datetime messagingProfileUpdatedOn;
+	datetime documentationProfileUpdatedOn;
 	bool deleted;
 	
 	// Relationship between farmer and crop types

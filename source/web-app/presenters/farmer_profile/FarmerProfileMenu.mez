@@ -34,6 +34,14 @@ void initMenu() {
 		Strings:concat(currentFarmerUser.messagingProfileUpdatedOn, "")
 	);
 	menuItems.append(profileMessagingMenuItem);
+	
+	// Menu item for farmer documentation profile
+	MenuItem profileDocumentationMenuItem = createMenuItem(
+		String:translate("menu_item.farmer_profile_documentation"), 
+		DSL_VIEWS.FarmerProfileDocumentation,
+		Strings:concat(currentFarmerUser.documentationProfileUpdatedOn, "")
+	);
+	menuItems.append(profileDocumentationMenuItem);
 }
 
 // Helper function to create menu item

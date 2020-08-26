@@ -3,6 +3,7 @@ unit FarmerProfile;
 Farmer farmer;
 Stock cropType;
 Shop messagingShop;
+string certificateId;
 
 void init() {
 	farmer = Farmer:user();
@@ -117,4 +118,52 @@ string removeAllMessagingShops() {
 		farmer.messagingProfileUpdatedOn = Mez:now();
 	}
 	return null;
+}
+
+// Manual validation and then save certificate and certificate id
+string saveGovernmentAssistanceCertificate() {
+	
+	if(certificateId == null) {
+		Mez:alertError("alert.null_government_assistance_certificate_id");
+		return null;
+	}
+	
+	if(farmer.governmentAssistanceCertificate == null) {
+		Mez:alertError("alert.null_government_assistance_certificate");
+		return null;
+	}
+	
+	uuid parsedId = Uuid:fromString(certificateId);
+
+	if(parsedId == null) {
+		farmer.governmentAssistanceCertificate = null;
+		Mez:alertError("alert.invalid_government_assistance_certificate_id");
+		return null;
+	}
+
+	farmer.governmentAssistanceCertificateId = parsedId;
+	farmer.documentationProfileUpdatedOn = Mez:now();
+	certificateId = null;
+	return null;
+}
+
+string deleteGovernmentAssistanceCertificate() {
+	farmer.governmentAssistanceCertificate = null;
+	farmer.governmentAssistanceCertificateId = null;
+	farmer.documentationProfileUpdatedOn = Mez:now();
+	return null;
+}
+
+Farmer[] getCurrentFarmerAsCollection() {
+	Farmer[] farmers;
+	farmers.append(farmer);
+	return farmers;
+}
+
+// Hide show file browser based on whether a file has been uploaded
+bool showFileBrowser() {
+	if(farmer.governmentAssistanceCertificate == null) {
+		return false;
+	}	
+	return true;
 }
