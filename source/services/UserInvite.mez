@@ -22,29 +22,3 @@ SystemAdmin inviteSystemAdmin() {
 	// Return the new System Admin
 	return systemAdmin;
 }
-
-@InviteUser
-Farmer inviteFarmer () {
-
-    Farmer farmer = Farmer:new();
-    farmer.firstName = "Mwenda";
-    farmer.lastName = "Victor";
-    farmer.mobileNumber = "254718034449";
-    farmer.emailAddress = "vrwanda@safaricom.co.ke";
-    farmer.farmAddress = "Central farmer";
-    farmer.farmSize = 100;
-    farmer.longitude = 0.0;
-    farmer.latitude = 0.0;
-    farmer.state  = STATES.Inland;
-    return farmer;
-}
-
-@InviteUser
-ShopOwner inviteShopOwner () {
-    ShopOwner shopOwner = ShopOwner:new();
-    shopOwner.firstName = "Victor";
-    shopOwner.lastName = "Rwanda";
-    shopOwner.mobileNumber = "254718034449";
-    shopOwner.emailAddress = "vrwanda@safaricom.co.ke";
-    return shopOwner;
-}

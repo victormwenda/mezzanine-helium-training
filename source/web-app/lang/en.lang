@@ -18,6 +18,8 @@ view_heading.farmer_profile_crop_types = Farmer Profile Crop Types
 view_heading.farmer_profile_general = Farmer Profile General
 view_heading.farmer_profile_messaging = Farmer Profile Messaging
 view_heading.farmer_profile_documentation = Farmer Profile Documentation
+view_heading.purchase = New Purchase
+view_heading.historic_purchases = Historic Purchases
 
 menu_item.system_admin_home = System Admin Home
 menu_item.system_admin_user_management = System Admin Users
@@ -34,6 +36,7 @@ menu_item.farmer_profile_general = General
 menu_item.farmer_profile_messaging = Messaging
 menu_item.farmer_profile_crop_type = Crop Types
 menu_item.farmer_profile_documentation = Documentation
+menu_item.farmer_purchases = Purchases
 
 info.first_name = First name
 info.last_name = Last name
@@ -65,6 +68,16 @@ info.farm_address = Farm address:
 info.last_updated = Last updated:
 info.shop_notification_info = Shops for which to receive stock level notifications:
 info.government_assistance_recipient_certificate_id = Government Assistance Recipient Certificate ID:
+info.selected_shop = Selected shop:
+info.selected_stock = Selected stock item:
+info.selected_stock_quantity_available = Quantity available: 
+info.selected_stock_price = Price
+info.total_cost = Total cost:
+info.government_assistance_discount = Government assistance discount:
+info.goods_cost = Goods cost:
+info.final_cost = Final cost:
+info.mpesa_number = Mobile number for mPesa payments:
+
 
 table_title.system_admins = System Administrators
 table_title.shops = Shops
@@ -74,6 +87,7 @@ table_title.farmers = Farmers
 table_title.farmer_crop_types = Farmer Crop Types
 table_title.stock_items = Stock Items
 table_title.farmers = Farmers
+table_title.available_stock = Available Stock
 
 column_heading.name = Name
 column_heading.mobile_number = Mobile number
@@ -105,6 +119,18 @@ column_heading.state = State
 column_heading.registered_on = Registered on
 column_heading.profile_category = Profile category
 column_heading.last_updated_on = Last updated 
+column_heading.stock_name = Stock name
+column_heading.stock_level = Stock level
+column_heading.price = Price
+column_heading.purchased_on = Purchased on
+column_heading.item = Item
+column_heading.quantity = Quantity
+column_heading.unit_price = Unit price
+column_heading.goods_cost = Goods cost
+column_heading.discount = Discount
+column_heading.final_cost = Final cost
+column_heading.payment_status = Payment status
+column_heading.payment_status_updated_on = Status updated on
 
 button.view = View
 button.edit = Edit
@@ -118,8 +144,11 @@ button.toggle_show_farmer_details_in_table = Toggle table detail
 button.fat_table_slim_table = {FarmerUserMgmt:tableLable}
 button.remove_all_messaging_shops = Remove all messaging shops
 button.deleted_government_assistance_recipient_certificate = Deleted government assistance recipient certificate
+button.reset_purchase = Reset purchase
 
 action.back = Back
+action.historic_purchases = Historic purchases
+action.new_purchase = New purchase
 
 textfield.first_name = First name
 textfield.last_name = Last name
@@ -131,10 +160,12 @@ textfield.longitude = Longitude:
 textfield.latitude = Latitude:
 textfield.farm_size = Farm size:
 textfield.government_assistance_recipient_certificate_id = Government Assistance Recipient Certificate ID:
+textfield.mpesa_number = Mobile number for mPesa payments:
 
 datefield.last_shop_visit = Last shop visit:
 
 textarea.farm_address = Farm address:
+textarea.quantity_to_purchase = Quantity to purchase:
 
 checkbox.opt_in_sms_messaging = Opt in for messaging by SMS:
 checkbox.opt_in_email_messaging = Opt in for messaging by E-mail:
@@ -144,12 +175,15 @@ submit.add_shop_owner = Add shop owner
 submit.add_crop_type = Add crop type
 submit.submit_messaging_preferences = Submit messaging preferences
 submit.add_messaging_shop = Add messaging shop
+submit.select_shop = Select shop
+submit.make_purchase = Make purchase
+submit.calculate_cost = Calculate cost
 
 select.state = State:
 select.shop_owner = Shop owner:
 select.crop_types = Select:
-select.date_of_stocktake = Date of Stocktake
-select.shop = Shop
+select.date_of_stocktake = Date of Stocktake:
+select.shop = Shop:
 
 validator.required_field = Required field
 
@@ -159,6 +193,11 @@ alert.uploaded_data_saved = The uploaded data has been saved.
 alert.null_government_assistance_certificate = No file specified. Please specify file before saving.
 alert.null_government_assistance_certificate_id = No certificate ID specified. Please specify the certificate ID before saving. 
 alert.invalid_government_assistance_certificate_id = Invalid certificate ID specified.
+alert.not_enough_stock = Please select a purchase quantity less than or equal to the available stock and greater than zero to proceed.
+alert.purchase_successfull = Your purchase has been successfully submitted for processing.
+alert.no_shop_specified = No shop specified. Please select a shop to proceed.
+alert.quantity_greater_than_zero = Please specify a quantity greater than zero to proceed.
+alert.no_quantity_specified = No quantity specified.
 
 confirm_subject.removing_user = Removing user
 confirm_body.removing_user = The selected user's access will be revoked. Continue?

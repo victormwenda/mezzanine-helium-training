@@ -19,6 +19,9 @@ persistent object Shop {
 	@requiredFieldValidator("validator.required_field")
 	STATES state;
 	
+	@requiredFieldValidator("validator.required_field")
+	string mobileNumber;
+	
 	// Meta information
 	datetime createdOn;
 	datetime updatedOn;

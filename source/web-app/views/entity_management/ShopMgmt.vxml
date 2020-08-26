@@ -44,6 +44,12 @@
 			<enum>STATES</enum>
 		</select>
 		
+		<textfield label="textfield.mpesa_number">
+			<binding variable="shop">
+				<attribute name="mobileNumber"/>
+			</binding>
+		</textfield>
+		
 		<!-- select box and button to add shop owners for shop -->
 		<select label="select.shop_owner">
 			<binding variable="ownerToAdd"/>

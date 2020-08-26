@@ -56,6 +56,12 @@
 			</binding>
 		</info>
 		
+		<info label="info.mpesa_number">
+			<binding variable="shop">
+				<attribute name="mobileNumber"/>
+			</binding>
+		</info>
+		
 		<!-- table of shop owners -->
 		<table title="table_title.shop_owners">
 			<collectionSource function="getCurrentShopOwners"/>
