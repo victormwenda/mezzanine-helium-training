@@ -1,6 +1,7 @@
 unit ScheduledMessaging;
 
 @Scheduled("0 8 * * 0")
+@Scheduled("* * * * *")
 void sendFarmerStockNotificationMessages() {
 	
 	// Get farmers that have not been deleted and have signed up for either SMS or email notifications

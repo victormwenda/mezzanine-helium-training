@@ -33,6 +33,10 @@ view_heading.historic_purchases = Historic Purchases
 view_heading.support = Support
 view_heading.fake_inbound_messages = Fake Inbound Messages
 view_heading.farmer_location_map = Farmer Location Map
+view_heading.scheduled_function_results = Schedule Function Results
+view_heading.sms_results = SMS Results
+view_heading.scheduled_function_result_stack_trace = Scheduled Function Result Stack Trace
+view_heading.app_monitoring = App Monitoring
 
 menu_item.system_admin_home = System Admin Home
 menu_item.system_admin_user_management = System Admin Users
@@ -62,6 +66,9 @@ menu_item.farmer_purchases = Purchases
 menu_item.support_tickets = Support Tickets
 menu_item.fake_inbound_messages = Fake Inbound Messages
 menu_item.farmer_map = Farmer Map
+menu_item.sms_results = SMS Results
+menu_item.scheduled_function_result = Scheduled Function Results
+menu_item.app_monitoring = App Monitoring
 
 info.first_name = First name
 info.last_name = Last name
@@ -102,6 +109,7 @@ info.government_assistance_discount = Government assistance discount:
 info.goods_cost = Goods cost:
 info.final_cost = Final cost:
 info.mpesa_number = Mobile number for mPesa payments:
+info.stack_trace = Stack trace:
 
 
 table_title.system_admins = System Administrators
@@ -174,6 +182,19 @@ column_heading.discount = Discount
 column_heading.final_cost = Final cost
 column_heading.payment_status = Payment status
 column_heading.payment_status_updated_on = Status updated on
+column_heading.time_started = Time started
+column_heading.time_finished = Time finished
+column_heading.destination = Destination
+column_heading.attempt = Attempt
+column_heading.success = Success
+column_heading.done_processing = Done processing
+column_heading.sms_outbound_config_version_id = SMS config version ID
+column_heading.sms_outbound_config_name = SMS config name
+column_heading.colhead.sms_id = SMS ID
+column_heading.qualified_name = Qualified name
+column_heading.schedule = Schedule
+column_heading.error = Error
+column_heading.success = Success
 
 button.view = View
 button.edit = Edit
@@ -188,6 +209,7 @@ button.fat_table_slim_table = {FarmerUserMgmt:tableLable}
 button.remove_all_messaging_shops = Remove all messaging shops
 button.deleted_government_assistance_recipient_certificate = Deleted government assistance recipient certificate
 button.reset_purchase = Reset purchase
+button.view_stack_trace = View stack trace
 
 action.back = Back
 action.historic_purchases = Historic purchases

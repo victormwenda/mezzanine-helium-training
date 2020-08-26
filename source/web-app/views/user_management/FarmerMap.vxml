@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://uiprogram.mezzanine.com/View ../View.xsd">
 	<view label="view_heading.farmer_location_map" unit="FarmerMap">
 
-		<menuitem label="menu_item.farmer_map" icon="Globe">
+		<menuitem label="menu_item.farmer_map" icon="Globe" order="5">
 			<userRole>System Admin</userRole>
 			<userRole>Shop Owner</userRole>
 		</menuitem>
