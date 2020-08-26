@@ -14,6 +14,7 @@ view_heading.entity_management = Entity Management
 view_heading.stock_levels_update = Stock Levels Update
 view_heading.farmer_details = Farmer Details
 view_heading.farmer_user_management = Farmer User Management
+view_heading.price_comparison = Price Comparison
 view_heading.farmer_profile_crop_types = Farmer Profile Crop Types
 view_heading.farmer_profile_general = Farmer Profile General
 view_heading.farmer_profile_messaging = Farmer Profile Messaging
@@ -35,6 +36,7 @@ menu_item.stock_management = Stock Management
 menu_item.entity_management = Entity Management
 menu_item.stock_levels_update = Stock Levels Update
 menu_item.farmer_user_management = Farmers
+menu_item.price_comparison = Price Comparison
 menu_item.farmer_profile_general = General
 menu_item.farmer_profile_messaging = Messaging
 menu_item.farmer_profile_crop_type = Crop Types
@@ -123,6 +125,10 @@ column_heading.longitude = Longitude
 column_heading.latitude = Latitude
 column_heading.state = State
 column_heading.registered_on = Registered on
+column_heading.shop = Shop
+column_heading.last_stocktake_date = Last Stocktake Date
+column_heading.last_stocktake_price = Last Stocktake Price
+column_heading.estimated_price = Estimated Price
 column_heading.profile_category = Profile category
 column_heading.last_updated_on = Last updated 
 column_heading.stock_name = Stock name
@@ -165,11 +171,13 @@ textfield.description = Description:
 textfield.longitude = Longitude:
 textfield.latitude = Latitude:
 textfield.farm_size = Farm size:
+textfield.yearly_inflation = Yearly Inflation:
 textfield.government_assistance_recipient_certificate_id = Government Assistance Recipient Certificate ID:
 textfield.mpesa_number = Mobile number for mPesa payments:
 textfield.sender_number = Sender Number
 
 datefield.last_shop_visit = Last shop visit:
+datefield.estimate_date = Date for Estimated Price
 
 textarea.farm_address = Farm address:
 textarea.quantity_to_purchase = Quantity to purchase:
@@ -181,6 +189,7 @@ checkbox.opt_in_email_messaging = Opt in for messaging by E-mail:
 submit.save = Save
 submit.add_shop_owner = Add shop owner
 submit.add_crop_type = Add crop type
+submit.refresh = Refresh
 submit.submit_messaging_preferences = Submit messaging preferences
 submit.add_messaging_shop = Add messaging shop
 submit.select_shop = Select shop
@@ -193,6 +202,7 @@ select.shop_owner = Shop owner:
 select.crop_types = Select:
 select.date_of_stocktake = Date of Stocktake:
 select.shop = Shop:
+select.stock = Stock
 
 validator.required_field = Required field
 
@@ -236,10 +246,10 @@ messaging.email.stock_level_body = {messageContent}
 messaging.email.farmer_purchase_invoice_body = Please see the attached invoice for your attention.
 messaging.email.farmer_purchase_invoice_subject = {subject}
 
+empty=
 wall_title.tickets = Tickets
 
 wall_action.start = Start
 wall_action.resolve = Mark Resolved
 wall_action.delete = Mark Spam 
 
-empty=
