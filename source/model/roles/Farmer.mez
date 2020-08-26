@@ -1,5 +1,3 @@
-@Restrict("System Admin", all())
-@Restrict("Shop Owner", notEquals(state, STATES.Inland))
 @Role("Farmer")
 persistent object Farmer {
 	
