@@ -18,6 +18,8 @@ view_heading.farmer_profile_crop_types = Farmer Profile Crop Types
 view_heading.farmer_profile_general = Farmer Profile General
 view_heading.farmer_profile_messaging = Farmer Profile Messaging
 view_heading.farmer_profile_documentation = Farmer Profile Documentation
+view_heading.support = Support
+view_heading.fake_inbound_messages = Fake Inbound Messages
 view_heading.purchase = New Purchase
 view_heading.historic_purchases = Historic Purchases
 
@@ -36,6 +38,8 @@ menu_item.farmer_profile_general = General
 menu_item.farmer_profile_messaging = Messaging
 menu_item.farmer_profile_crop_type = Crop Types
 menu_item.farmer_profile_documentation = Documentation
+menu_item.support_tickets = Support Tickets
+menu_item.fake_inbound_messages = Fake Inbound Messages
 menu_item.farmer_purchases = Purchases
 
 info.first_name = First name
@@ -160,11 +164,13 @@ textfield.longitude = Longitude:
 textfield.latitude = Latitude:
 textfield.farm_size = Farm size:
 textfield.government_assistance_recipient_certificate_id = Government Assistance Recipient Certificate ID:
+textfield.sender_number = Sender Number
 textfield.mpesa_number = Mobile number for mPesa payments:
 
 datefield.last_shop_visit = Last shop visit:
 
 textarea.farm_address = Farm address:
+textarea.message_content = Message Content
 textarea.quantity_to_purchase = Quantity to purchase:
 
 checkbox.opt_in_sms_messaging = Opt in for messaging by SMS:
@@ -175,6 +181,7 @@ submit.add_shop_owner = Add shop owner
 submit.add_crop_type = Add crop type
 submit.submit_messaging_preferences = Submit messaging preferences
 submit.add_messaging_shop = Add messaging shop
+submit.send = Send
 submit.select_shop = Select shop
 submit.make_purchase = Make purchase
 submit.calculate_cost = Calculate cost
@@ -193,6 +200,9 @@ alert.uploaded_data_saved = The uploaded data has been saved.
 alert.null_government_assistance_certificate = No file specified. Please specify file before saving.
 alert.null_government_assistance_certificate_id = No certificate ID specified. Please specify the certificate ID before saving. 
 alert.invalid_government_assistance_certificate_id = Invalid certificate ID specified.
+alert.simulated_inbound_sms_received = Simulated inbound SMS received.
+alert_error.no_inbound_message_content = No message content specified.
+alert_error.no_inbound_message_sender = No sender number specified.
 alert.not_enough_stock = Please select a purchase quantity less than or equal to the available stock and greater than zero to proceed.
 alert.purchase_successfull = Your purchase has been successfully submitted for processing.
 alert.no_shop_specified = No shop specified. Please select a shop to proceed.
@@ -222,5 +232,11 @@ messaging.email.stock_level_subject = Stock level
 messaging.email.stock_level_body = {messageContent}
 messaging.email.farmer_purchase_invoice_body = Please see the attached invoice for your attention.
 messaging.email.farmer_purchase_invoice_subject = {subject}
+
+wall_title.tickets = Tickets
+
+wall_action.start = Start
+wall_action.resolve = Mark Resolved
+wall_action.delete = Mark Spam 
 
 empty=
