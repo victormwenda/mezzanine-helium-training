@@ -8,6 +8,9 @@
 			<userRole>System Admin</userRole>
 		</menuitem>
 
+		<button label="button.resolve_all_tickets" action="resolveAllTickets"/>
+		<button label="button.mark_all_tickets_as_spam" action="markAllTicketsAsSpam"/>
+
 		<wall title="wall_title.tickets" defaultSort="receivedTime" >
 			<collectionSource function="getUnresolvedTickets"/>
 			<itemTitle value="getTicketTitle"/>
@@ -19,5 +22,5 @@
 			<itemAction label="wall_action.delete" action="deleteTicket" />
 		</wall>
 
-		</view>
+	</view>
 </ui>

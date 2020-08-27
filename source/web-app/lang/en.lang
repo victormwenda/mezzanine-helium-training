@@ -215,6 +215,8 @@ button.remove_all_messaging_shops = Remove all messaging shops
 button.deleted_government_assistance_recipient_certificate = Deleted government assistance recipient certificate
 button.reset_purchase = Reset purchase
 button.view_stack_trace = View stack trace
+button.resolve_all_tickets = Resolve all tickets
+button.mark_all_tickets_as_spam = Mark all tickets as spam
 
 action.back = Back
 action.historic_purchases = Historic purchases
@@ -296,6 +298,8 @@ alert_error.no_start_date = No start date specified.
 alert_error.no_end_date = No end date specified.
 alert_error.no_shop_selected = No shop selected.
 
+alert.tickets_resolved = {updates} tickets resolved.
+alert.tickets_marked_as_spam = {updates} tickets marked as spam.
 
 confirm_subject.removing_user = Removing user
 confirm_body.removing_user = The selected user's access will be revoked. Continue?
