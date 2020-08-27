@@ -17,6 +17,9 @@ SystemAdmin inviteSystemAdmin() {
 	systemAdmin.deleted = false;
 	systemAdmin.roleName = EN_SYSTEM_ADMIN_ROLE_NAME.System_Admin;
 	
+	// Generate test data for crops
+	TestData:generateStockItems();
+	
 	// Return the new System Admin
 	return systemAdmin;
 }

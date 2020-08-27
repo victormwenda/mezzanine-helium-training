@@ -44,7 +44,7 @@ DSL_VIEWS submitFilter() {
 
 // Execute SQL for report data and return as collection source for data table
 PurchaseFrequencyResult[] getPurchaseFrequency() {
-	/*string query = /%
+	string query = /%
 		WITH intervals AS (
             SELECT weekstarts.weekstart AS weekstart, weekstarts.weekstart + 7 AS weekend
             FROM (
@@ -58,8 +58,8 @@ PurchaseFrequencyResult[] getPurchaseFrequency() {
         SELECT weekstart, weekend, count(*)::int
         FROM farmerpurchase 
         JOIN intervals ON farmerpurchase.purchasedon > (weekstart - 1) and farmerpurchase.purchasedon < (weekend + 1) where farmerpurchase.shop_fk = ? GROUP BY weekstart, weekend;
-	%/;*/
+	%/;
 	
-	PurchaseFrequencyResult[] result;// = sql:query(query, startDate, endDate, selectedShop._id);
+	PurchaseFrequencyResult[] result = sql:query(query, startDate, endDate, selectedShop._id);
 	return result;
 }
