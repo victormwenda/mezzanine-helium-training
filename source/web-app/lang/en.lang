@@ -37,6 +37,7 @@ view_heading.scheduled_function_results = Schedule Function Results
 view_heading.sms_results = SMS Results
 view_heading.scheduled_function_result_stack_trace = Scheduled Function Result Stack Trace
 view_heading.app_monitoring = App Monitoring
+view_heading.purchase_frequency = Purchase Frequency
 
 menu_item.system_admin_home = System Admin Home
 menu_item.system_admin_user_management = System Admin Users
@@ -69,6 +70,7 @@ menu_item.farmer_map = Farmer Map
 menu_item.sms_results = SMS Results
 menu_item.scheduled_function_result = Scheduled Function Results
 menu_item.app_monitoring = App Monitoring
+menu_item.purchase_frequency = Purchase Frequency
 
 info.first_name = First name
 info.last_name = Last name
@@ -195,6 +197,9 @@ column_heading.qualified_name = Qualified name
 column_heading.schedule = Schedule
 column_heading.error = Error
 column_heading.success = Success
+column_heading.week_start = Week start
+column_heading.week_end = Week end
+column_heading.purchases = Purchases
 
 button.view = View
 button.edit = Edit
@@ -234,6 +239,8 @@ textfield.sender_number = Sender Number
 
 datefield.last_shop_visit = Last shop visit:
 datefield.estimate_date = Date for Estimated Price
+datefield.start_date = Start date:
+datefield.end_date = End date:
 
 textarea.farm_address = Farm address:
 textarea.quantity_to_purchase = Quantity to purchase:
@@ -258,6 +265,7 @@ submit.select_shop = Select shop
 submit.make_purchase = Make purchase
 submit.calculate_cost = Calculate cost
 submit.send = Send
+submit.submit = Submit
 
 select.state = State:
 select.shop_owner = Shop owner:
@@ -283,6 +291,10 @@ alert.no_quantity_specified = No quantity specified.
 alert.simulated_inbound_sms_received = Simulated inbound SMS received.
 alert_error.no_inbound_message_content = No message content specified.
 alert_error.no_inbound_message_sender = No sender number specified.
+
+alert_error.no_start_date = No start date specified.
+alert_error.no_end_date = No end date specified.
+alert_error.no_shop_selected = No shop selected.
 
 
 confirm_subject.removing_user = Removing user

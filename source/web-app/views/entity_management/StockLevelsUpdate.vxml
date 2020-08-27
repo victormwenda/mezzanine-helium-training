@@ -26,6 +26,5 @@
 		</fileupload>
 
 		<submit label="submit.save" action="saveStockUpdate"/>
-	
 	</view>
 </ui>
