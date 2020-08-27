@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://uiprogram.mezzanine.com/View ../View.xsd">
 	
-	<view label="view_heading.system_admin_user_details" unit="SystemAdminUserMgmt">
+	<view label="view_heading.system_admin_user_details" unit="SystemAdminUserMgmt" init="initViewDetails">
 
 		<!-- Note that we have no menuitem tag on this page, as we need to navigate
 			  to it only from the System Admin User Management page -->
@@ -14,15 +14,11 @@
 		<action label="action.back" action="back" />
 
 		<info label="info.first_name">
-			<binding variable="selectedSystemAdmin">
-				<attribute name="firstName"/>
-			</binding>
+			<binding variable="systemAdminFirstName" />
 		</info>
 
 		<info label="info.last_name">
-			<binding variable="selectedSystemAdmin">
-				<attribute name="lastName"/>
-			</binding>
+			<binding variable="systemAdminLastName" />
 		</info>
 
 		<info label="info.email_address">
