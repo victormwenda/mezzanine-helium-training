@@ -30,6 +30,9 @@
 			<column heading="column_heading.stock_type">
 				<attributeName>stockType</attributeName>
 			</column>
+                        <column heading="column_heading.id">
+				<attributeName>_id</attributeName>
+			</column>
 			
 			<rowAction label="button.edit" action="editStock">
 				<binding variable="stock" />

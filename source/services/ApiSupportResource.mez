@@ -1,0 +1,11 @@
+unit ApiSupportResource;
+
+@POST("v1/support/ticket")
+void postSupportTicket(SupportTicket supportTicket) {
+    supportTicket.receivedTime = Mez:now();
+    supportTicket.spam = false;
+    supportTicket.resolved = false;
+    supportTicket.save();
+}
+
+// curl -u '27763303624:123456' -X POST -H "Content-Type: application/json" -d '{"_id":"0e83d825-963e-4c9c-8340-75269d7c3f57", "receivedTime":1522738620123, "text":"I require assistance in performing a stock update", "senderNumber":"27763303624"}' "http://jm.stb.mezzanineware.com/rest/mezzanine-tut-lesson-25/support/ticket"
