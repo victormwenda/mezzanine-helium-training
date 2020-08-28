@@ -4,10 +4,12 @@ Shop selectedShop;
 Shop[] availableShops;
 date selectedDateOfStocktake;
 FileUpload fileUpload;
-
+CsvException[] unprocessedItems;
+bool showExceptions;
 // Init function to initialize unit variables
 void init() {
 	fileUpload = FileUpload:new();
+	showExceptions = false;
 
 	availableShops = Shop:relationshipIn(owners, ShopOwner:user());
 
@@ -18,15 +20,40 @@ void init() {
 }
 
 void saveStockUpdate() {
-	StockUpdate[] stockUpdates = StockUpdate:fromCsv(fileUpload.data);
-	for (int i = 0; i < stockUpdates.length(); i++) {
-		StockUpdate stockUpdate = stockUpdates.get(i);
-		stockUpdate.stocktakeDate = selectedDateOfStocktake;
-		stockUpdate.shop = selectedShop;
-		stockUpdate.stock = getStockFromName(stockUpdate.stockName);
-		stockUpdate.save();
+	unprocessedItems.clear();
+	MezBatch stockUpdateBatch = Mez:createBatch(fileUpload._id, fileUpload.data);
+
+	// Get the batch items related to the batch being processed
+	MezBatchItem[] stockUpdateBatchItems = MezBatchItem:relationshipIn(batch, stockUpdateBatch);
+
+	// Results from CSV processing will be stored in this collection
+	StockUpdate[] stockUpdates;
+
+	// Iterate over the batch items and process one by one using fromCsvLine
+	foreach(MezBatchItem stockUpdateBatchItem: stockUpdateBatchItems) {
+    try{
+        StockUpdate stockUpdate = StockUpdate:fromCsvLine(stockUpdateBatch.header, stockUpdateBatchItem.value);
+				stockUpdate.stocktakeDate = selectedDateOfStocktake;
+				stockUpdate.shop = selectedShop;
+				stockUpdate.stock = getStockFromName(stockUpdate.stockName);
+				stockUpdate.save();
+				stockUpdates.append(stockUpdate);
+
+        // Once a batch item has been successfully processed it can be marked as such
+        stockUpdateBatchItem.processed = true;
+    }
+    catch(exception) {
+        // Handle the exception by logging it and creating a follow up task
+        handleException(stockUpdateBatch, stockUpdateBatchItem, exception.message);
+    }
 	}
-	Mez:alert("alert.uploaded_data_saved");
+	if (unprocessedItems.length() > 0) {
+		Mez:alert("alert.uploaded_data_saved_with_exc");
+		showExceptions = true;
+	} else {
+		Mez:alert("alert.uploaded_data_saved");
+		showExceptions = false;
+	}
 	fileUpload = FileUpload:new();
 }
 
@@ -39,3 +66,15 @@ Stock getStockFromName(string name) {
 	return null;
 }
 
+void handleException(MezBatch updateBatch, MezBatchItem updateItem, string exception){
+	//Mark that the MezBatchItem has not been processed successfully
+	updateItem.processed = false;
+	//Log the exception
+	Mez:log(exception);
+	//Add to exception list to display to User
+	CsvException item = CsvException:new();
+	item.header = updateBatch.header;
+	item.value = updateItem.value;
+	item.exception = exception;
+	unprocessedItems.append(item);
+}

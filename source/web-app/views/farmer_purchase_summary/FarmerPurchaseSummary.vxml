@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ui xmlns="http://uiprogram.mezzanine.com/View" 
+<ui xmlns="http://uiprogram.mezzanine.com/View"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://uiprogram.mezzanine.com/View ../View.xsd">
 	<view label="view_heading.farmer_purchase_summary" unit="FarmerPurchaseSummary">
-	
-		<menuitem label="menu_item.farmer_purchase_summary">
+
+		<menuitem label="menu_item.farmer_purchase_summary" icon="Shop">
 			<userRole>System Admin</userRole>
 		</menuitem>
-		
+
 		<table>
 			<collectionSource function="getFarmerPurchaseSummaries"/>
 			<column heading="column_heading.purchased_on">
