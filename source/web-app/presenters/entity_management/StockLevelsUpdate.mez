@@ -6,6 +6,7 @@ date selectedDateOfStocktake;
 FileUpload fileUpload;
 CsvException[] unprocessedItems;
 bool showExceptions;
+
 // Init function to initialize unit variables
 void init() {
 	fileUpload = FileUpload:new();
@@ -31,21 +32,22 @@ void saveStockUpdate() {
 
 	// Iterate over the batch items and process one by one using fromCsvLine
 	foreach(MezBatchItem stockUpdateBatchItem: stockUpdateBatchItems) {
-    try{
-        StockUpdate stockUpdate = StockUpdate:fromCsvLine(stockUpdateBatch.header, stockUpdateBatchItem.value);
-				stockUpdate.stocktakeDate = selectedDateOfStocktake;
-				stockUpdate.shop = selectedShop;
-				stockUpdate.stock = getStockFromName(stockUpdate.stockName);
-				stockUpdate.save();
-				stockUpdates.append(stockUpdate);
+	
+		try{
+			StockUpdate stockUpdate = StockUpdate:fromCsvLine(stockUpdateBatch.header, stockUpdateBatchItem.value);
+			stockUpdate.stocktakeDate = selectedDateOfStocktake;
+			stockUpdate.shop = selectedShop;
+			stockUpdate.stock = getStockFromName(stockUpdate.stockName);
+			stockUpdate.save();
+			stockUpdates.append(stockUpdate);
 
-        // Once a batch item has been successfully processed it can be marked as such
-        stockUpdateBatchItem.processed = true;
-    }
-    catch(exception) {
-        // Handle the exception by logging it and creating a follow up task
-        handleException(stockUpdateBatch, stockUpdateBatchItem, exception.message);
-    }
+			// Once a batch item has been successfully processed it can be marked as such
+			stockUpdateBatchItem.processed = true;
+		}
+		catch(exception) {
+			// Handle the exception by logging it and creating a follow up task
+			handleException(stockUpdateBatch, stockUpdateBatchItem, exception.message);
+		}
 	}
 	if (unprocessedItems.length() > 0) {
 		Mez:alert("alert.uploaded_data_saved_with_exc");
@@ -67,10 +69,13 @@ Stock getStockFromName(string name) {
 }
 
 void handleException(MezBatch updateBatch, MezBatchItem updateItem, string exception){
+
 	//Mark that the MezBatchItem has not been processed successfully
 	updateItem.processed = false;
+
 	//Log the exception
 	Mez:log(exception);
+
 	//Add to exception list to display to User
 	CsvException item = CsvException:new();
 	item.header = updateBatch.header;

@@ -26,20 +26,20 @@
 		</fileupload>
 
 		<submit label="submit.save" action="saveStockUpdate"/>
-
-    <table>
-      <visible variable="showExceptions"/>
-      <collectionSource variable="unprocessedItems"/>
-      <column heading="column_heading.header">
-        <attributeName>header</attributeName>
-      </column>
-      <column heading="column_heading.value">
-        <attributeName>value</attributeName>
-      </column>
-      <column heading="column_heading.exception">
-        <attributeName>exception</attributeName>
-      </column>
-    </table>
-
+		
+		<table>
+		    <visible variable="showExceptions"/>
+		    <collectionSource variable="unprocessedItems"/>
+		    
+		    <column heading="column_heading.header">
+			<attributeName>header</attributeName>
+		    </column>
+		    <column heading="column_heading.value">
+			<attributeName>value</attributeName>
+		    </column>
+		    <column heading="column_heading.exception">
+			<attributeName>exception</attributeName>
+		    </column>
+		</table>
 	</view>
 </ui>
