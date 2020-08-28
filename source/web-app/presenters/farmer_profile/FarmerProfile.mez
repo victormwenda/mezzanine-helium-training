@@ -4,9 +4,17 @@ Farmer farmer;
 Stock cropType;
 Shop messagingShop;
 string certificateId;
+Stock cropPictureFilter;
+CropQualityPicture selectedCropQualityPicture;
+CropQualityPicture cropQualityPicture;
 
 void init() {
 	farmer = Farmer:user();
+}
+
+void cropQualityPicsInit() {
+    init();
+    cropQualityPicture = CropQualityPicture:new();
 }
 
 Stock[] getFarmerCropTypes() {
@@ -167,3 +175,41 @@ bool showFileBrowser() {
 	}	
 	return true;
 }
+string applyCropGalleryFilter() {
+    selectedCropQualityPicture = null;
+    cropQualityPicture = CropQualityPicture:new();
+    return null;
+}
+
+CropQualityPicture[] getFarmerCropQualityPictures() {
+    CropQualityPicture[] result;
+    if (cropPictureFilter == null) {
+        result = CropQualityPicture:relationshipIn(farmer, farmer);
+    } else {
+        result = CropQualityPicture:and(relationshipIn(farmer, farmer),
+                relationshipIn(cropType, cropPictureFilter));
+    }
+    result.sortAsc("pictureDate");
+    return result;
+}
+
+string saveCropQualityPicture() {
+    cropQualityPicture.farmer = farmer;
+    cropQualityPicture.save(); 
+    cropQualityPicture = CropQualityPicture:new();
+    farmer.cropQualityPicturesUpdatedOn = Mez:now();
+    return null;
+}
+
+string editSelectedCropQualityPicture() {
+    cropQualityPicture = selectedCropQualityPicture;
+    return null;
+}
+
+string deleteSelectedCropQualityPicture() {
+    CropQualityPicture:delete(selectedCropQualityPicture);
+    cropQualityPicture = CropQualityPicture:new();
+    farmer.cropQualityPicturesUpdatedOn = Mez:now();
+    return null;
+}
+

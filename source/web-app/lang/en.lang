@@ -15,6 +15,7 @@ view_heading.stock_levels_update = Stock Levels Update
 view_heading.farmer_details = Farmer Details
 view_heading.farmer_user_management = Farmer User Management
 view_heading.farmer_profile_crop_types = Farmer Profile Crop Types
+view_heading.farmer_profile_crop_quality_pictures = Farmer Profile Crop Quality Pictures
 view_heading.farmer_profile_general = Farmer Profile General
 view_heading.farmer_profile_messaging = Farmer Profile Messaging
 view_heading.farmer_profile_documentation = Farmer Profile Documentation
@@ -55,6 +56,7 @@ menu_item.farmer_profile_general = General
 menu_item.farmer_profile_messaging = Messaging
 menu_item.farmer_profile_crop_type = Crop Types
 menu_item.farmer_profile_documentation = Documentation
+menu_item.farmer_profile_crop_quality_pictures = Crop Quality Pictures
 menu_item.farmer_purchases = Purchases
 menu_item.support_tickets = Support Tickets
 menu_item.fake_inbound_messages = Fake Inbound Messages
@@ -125,6 +127,8 @@ table_title.farmer_crop_types = Farmer Crop Types
 table_title.stock_items = Stock Items
 table_title.farmers = Farmers
 table_title.available_stock = Available Stock
+
+gallery_title.farmer_crop_quality_pictures = Crop Quality Pictures
 
 column_heading.name = Name
 column_heading.mobile_number = Mobile number
@@ -251,6 +255,7 @@ datefield.last_shop_visit = Last shop visit:
 datefield.estimate_date = Date for Estimated Price
 datefield.start_date = Start date:
 datefield.end_date = End date:
+datefield.photographed_on = Photographed on:
 
 textarea.farm_address = Farm address:
 textarea.quantity_to_purchase = Quantity to purchase:
@@ -276,11 +281,16 @@ submit.make_purchase = Make purchase
 submit.calculate_cost = Calculate cost
 submit.send = Send
 submit.submit = Submit
+submit.delete = Delete
+submit.edit_selected = Edit Selected Image
+submit.delete_selected = Delete Selected Image
+submit.apply_filter = Apply Filter
 
 select.state = State:
 select.shop_owner = Shop owner:
 select.crop_types = Select:
 select.date_of_stocktake = Date of Stocktake:
+select.filter_on_crop_type = Filter on Crop Type:
 select.shop = Shop:
 select.stock = Stock
 select.custom_role_name = Custom Role Name
@@ -318,6 +328,7 @@ confirm_body.removing_stock = The selected stock item will be deleted. Continue?
 
 fileupload.stock_update_CSV = Stock Update CSV
 fileupload.government_assistance_recipient_certificate = Government Assistance Recipient Certificate:
+fileupload.upload_new_crop_picture  Upload New Crop Picture
 
 enum.STATES.West_Coast = West Coast
 enum.STATES.South_Coast = South Coast

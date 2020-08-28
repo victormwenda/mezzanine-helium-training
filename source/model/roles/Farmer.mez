@@ -49,6 +49,7 @@ persistent object Farmer {
 	datetime cropTypeProfileUpdatedOn;
 	datetime messagingProfileUpdatedOn;
 	datetime documentationProfileUpdatedOn;
+    datetime cropQualityPicturesUpdatedOn;
 	bool deleted;
 	
 	// Relationship between farmer and crop types
