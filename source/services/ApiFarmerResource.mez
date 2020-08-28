@@ -44,10 +44,45 @@ ApiResponse postFarmerDocumentation(ApiFarmerDocumentation farmerDocumentation) 
 }
 
 // Example curl call for posting farmer documentation:
-// curl -u '27763303624:123456' -X POST -H "Content-Type: application/json" -d '{"farmerMobileNumber":"27763303624","governmentAssistanceCertificateId":"7c3c66dd-992d-489a-a4e0-99da1f225422","governmentAssistanceCertificate":"WW91IGFyZSBhcHByb3ZlZCBmb3IgZ292ZXJubWVudCBhc3Npc3RhbmNlLg==","governmentAssistanceCertificate_fname__":"FarmerGovernmentAssistance.txt","governmentAssistanceCertificate_size__":43,"governmentAssistanceCertificate_mtype__":"text/plain"}' "http://jm.stb.mezzanineware.com/rest/mezzanine-tut-lesson-25/farmer/profile/documentation"
+/* curl -u 'user:pass' \
+-H "Content-Type: application/json" \
+-X POST "https://dev.mezzanineware.com/rest/mezzanine-tut-lesson-27/farmer/profile/documentation" \
+-d '{
+  "farmerMobileNumber":"27763303624",
+  "governmentAssistanceCertificateId":"7c3c66dd-992d-489a-a4e0-99da1f225422",
+  "governmentAssistanceCertificate":"WW91IGFyZSBhcHByb3ZlZCBmb3IgZ292ZXJubWVudCBhc3Npc3RhbmNlLg==",
+  "governmentAssistanceCertificate_fname__":"FarmerGovernmentAssistance.txt",
+  "governmentAssistanceCertificate_size__":43,
+  "governmentAssistanceCertificate_mtype__":"text/plain"
+}' */
+
+@ResponseExclude("_locale")
+@ResponseExclude("_timeZone")
+@ResponseExclude("deleted")
+@ResponseExclude("governmentAssistanceCertificate_fname__")
+@ResponseExclude("governmentAssistanceCertificate_mtype__")
+@ResponseExclude("governmentAssistanceCertificate_size__")
+@ResponseExclude("governmentAssistanceCertificate")
+@ResponseExpand("purchases")
+@ResponseExpand("cropTypes")
+@ResponseExclude("purchases._id")
+@ResponseExclude("purchases.farmer")
+@ResponseExpand("purchases.shop")
+@GET("v1/farmer/mobileNumber/{mobileNumber}")
+Farmer getFarmerWithMobileNumber(string mobileNumber) {
+    return findFarmerWithNumber(mobileNumber);
+}
+
+// Example curl call for getting farmer details
+/* curl -u 'user:pass' \
+-H "Content-Type: application/json" \
+-X GET "https://dev.mezzanineware.com/rest/mezzanine-tut-lesson-27/v1/farmer/mobileNumber/27763303624" */
 
 Farmer findFarmerWithNumber(string mobileNumber) {
-    Farmer[] farmers = Farmer:equals(mobileNumber, mobileNumber);
+    Farmer[] farmers = Farmer:and(
+        equals(mobileNumber, mobileNumber),
+        notEquals(deleted, true)
+    );
     if(farmers.length() > 0) {
         return farmers.get(0);
     }
